@@ -1,5 +1,14 @@
 <h1> you hit rival homepage</h1>
 
+
+<form action="/fortnite/compare" method="POST">
+    <label for="new-rival">Keep Rival and Compare</label>
+    <input type="hidden" name="rivalname" id="new-rivalname">
+
+    <input type="submit" value="New Rival">
+</form>
+
+
 <li><a href='/fortnite/index'>Back to your stats</a></li>
 
 <h1><%= rivalStats.name %></h1>
