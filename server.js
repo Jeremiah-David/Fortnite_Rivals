@@ -17,7 +17,7 @@ app.use(session({
 
 
 //passport middleware
-
+app.use(express.static(__dirname+"/public"))
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -34,6 +34,7 @@ app.use(( req, res, next) => {
 })
 //controller middleware
 app.use('/auth', require('./controllers/auth.js'))
+app.use('/fortnite', require('./controllers/fortnite.js'))
 
 app.get('/', (req, res)  => {
     res.render('home')
@@ -41,7 +42,7 @@ app.get('/', (req, res)  => {
 })
 
 app.get('/profile', isLoggedIn, (req, res)  => {
-    res.render('profile')
+    res.render('fortnite/index')
 })
 
 app.get('*', (req, res) => {
