@@ -1,11 +1,12 @@
 <h1> you hit rival homepage</h1>
 
 
-<form action="/fortnite/compare" method="POST">
-    <label for="new-rival">Keep Rival and Compare</label>
-    <input type="hidden" name="rivalname" id="new-rivalname">
+<form action="/fortnite/compare/<%=epicId%>" method="GET">
+    <% console.log(epicId) %>
+    <label for="new-rival"></label>
+    <input type="hidden"  id="new-rivalname" value="<%=epicId%>">  
 
-    <input type="submit" value="New Rival">
+    <input type="submit" value="Compare with Rival">
 </form>
 
 
@@ -41,7 +42,7 @@
 <h4>Victory Royale!</h4>       <li> <%=   rivalStats.global_stats.duo.placetop1 %> </li>
 <h4>kd</h4>        <li> <%=   rivalStats.global_stats.duo.kd %> </li>
 <h4>placetop5</h4>       <li><%=   rivalStats.global_stats.duo.placetop5 %> </li>
-<h4>placetop10</h4>         <li> <%=   rivalStats.global_stats.duo.placetop10 %> </li>
+
 <h4>placetop12</h4>         <li> <%=   rivalStats.global_stats.duo.placetop12 %> </li>
     </div>
 <div class="col-md-1">

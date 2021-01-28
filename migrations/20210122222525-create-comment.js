@@ -9,10 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       rivalId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
+      },
+      content: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

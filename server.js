@@ -35,6 +35,8 @@ app.use(( req, res, next) => {
 //controller middleware
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/fortnite', require('./controllers/fortnite.js'))
+app.use('/cboard', require('./controllers/cboard.js'))
+
 
 app.get('/', (req, res)  => {
     res.render('home')
