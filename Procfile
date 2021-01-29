@@ -1,1 +1,1 @@
-web: node server.jshero
+web: node server.js
