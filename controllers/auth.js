@@ -42,8 +42,8 @@ router.post('/signup', (req, res) => {
 
                 // res.send('POST form data from signup.ejs, then redirect')
                 passport.authenticate('local', {
-                    successRedirect: '/fortnite/index', // !-> FLASH <-!
-                    successFlash: 'Account created and logged in!'
+                    successRedirect: '/auth/login', // !-> FLASH <-!
+                    successFlash: 'Account created please log in!'
                 })(req, res) // why does this need to be an IIFE???
                 return createdUser
             } else { // !-> FLASH <-!
