@@ -15,17 +15,16 @@
 </form>
 
 
-<!--  currentUser.epicUsername %>'s Messages</h1>
-    <comment.forEach(comments => { %>
-        <comments%>        
-        < }) %> -->
 
-<!-- <div class ="container">
-    <h4>Do you have any ideas of where you want the community to head? Games or features you would like added, or bugs fixed?</h4>
-    
-    <label for="devthings">Community Ideas (games to add, bugs to fix, etc.</label>
-    <input type="text" name="devthings" id="devthings">
-
-    <input type="submit" value="Post to Community">
-</form>
-</div> -->
+    <%comments.forEach(comment => { %>
+      <li>  <%=comment.content%>    
+      <form method="POST" action="/cboard/<%= comment.id %>/?_method=DELETE">
+          <input type="submit" value="Delete">
+      </form>
+      <form method="POST" action="/cboard/<%= comment.id %>/?_method=PUT">
+        <label for="rivalSpeak">Edit Comment</label>
+    <input type="text" name="editSpeak" id="editSpeak">
+        <input type="submit" value="Edit Comment">
+    </form> </li>  
+        <% }) %>
+       

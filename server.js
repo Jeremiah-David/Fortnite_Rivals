@@ -6,7 +6,10 @@ const session = require('express-session')
 const passport = require('./config/ppConfig.js')
 const flash = require('connect-flash')
 const isLoggedIn = require('./middleware/isLoggedIn.js')
+const methodOverride = require('method-override');
 
+
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}))
 // set up the view engine to ejs
 app.use(session({
