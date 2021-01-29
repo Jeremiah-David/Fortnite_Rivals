@@ -41,32 +41,29 @@ router.post('/index', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     db.comment.destroy({
-        where: { 
+        where: {
             id: req.params.id
         }
     })
-    .then(deleted => {
-        res.redirect('/cboard/index');
+        .then(deleted => {
+            res.redirect('/cboard/index');
 
-    })  
+        })
 
-    
+
 });
 
 router.put('/:id', (req, res) => {
     db.comment.update({
         content: req.body.editSpeak,
     }, {
-        where: { 
+        where: {
             id: req.params.id
         }
     })
-    .then(updated => {
-        res.redirect('/cboard/index');
-
-    })  
-
-    
+        .then(updated => {
+            res.redirect('/cboard/index');
+        })
 });
 
 
